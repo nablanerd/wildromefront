@@ -21,6 +21,7 @@ import { BattleloseComponent } from './pages/battlelose/battlelose.component';
 import { RdlistComponent } from './pages/rdlist/rdlist.component';
 import { RddetailsComponent } from './pages/rddetails/rddetails.component';
 import { WalloffameComponent } from './pages/walloffame/walloffame.component';
+import { TeststyleComponent } from './pages/teststyle/teststyle.component';
 
 const routes: Routes = [
   { path: '', component: DemoPageComponent },
@@ -49,6 +50,9 @@ const routes: Routes = [
   { path: 'rddetails', component: RddetailsComponent },
 
   { path: 'walloffame', component: WalloffameComponent },
+
+
+  { path: 'teststyle', component: TeststyleComponent },
 
 
 
