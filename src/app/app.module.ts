@@ -9,6 +9,7 @@ import { DemoPageComponent } from './pages/demo/demo.component';
 import { DemoComponent } from './components/demo/demo.component';
 import { DemoPipe } from './pipes/demo.pipe';
 import { DemoDirective } from './directives/demo.directive';
+
 import { LoginComponent } from './pages/login/login.component';
 import { InputtextComponent } from './components/inputtext/inputtext.component';
 import { InputpasswordComponent } from './components/inputpassword/inputpassword.component';
@@ -33,8 +34,10 @@ import { RdlistComponent } from './pages/rdlist/rdlist.component';
 import { RddetailsComponent } from './pages/rddetails/rddetails.component';
 import { WalloffameComponent } from './pages/walloffame/walloffame.component';
 
+import { TeststyleComponent } from './pages/teststyle/teststyle.component';
+
 @NgModule({
-  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, LoginComponent, InputtextComponent, InputpasswordComponent, RegisterComponent, InfoComponent, MenuComponent, ProvincelistComponent, ProvincedetailsComponent, ProvincebuildComponent, RessourcesComponent, BuildinglistComponent, BuildingbuildComponent, BuildingdetailsComponent, LegionlistComponent, BattlelistComponent, BattleattaqueComponent, BattledefendreComponent, BattlewinComponent, BattleloseComponent, RdlistComponent, RddetailsComponent, WalloffameComponent],
+  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, LoginComponent, InputtextComponent, InputpasswordComponent, RegisterComponent, InfoComponent, MenuComponent, ProvincelistComponent, ProvincedetailsComponent, ProvincebuildComponent, RessourcesComponent, BuildinglistComponent, BuildingbuildComponent, BuildingdetailsComponent, LegionlistComponent, BattlelistComponent, BattleattaqueComponent, BattledefendreComponent, BattlewinComponent, BattleloseComponent, RdlistComponent, RddetailsComponent, WalloffameComponent, TeststyleComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
   providers: [],
   bootstrap: [AppComponent],
