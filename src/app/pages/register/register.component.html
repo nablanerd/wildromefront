@@ -1,18 +1,28 @@
 <h1>Inscription</h1>
 
 <div class="input">
-    <label>username</label>
-    <input class="login" type="text">
-    </div>
-
-    <div class="input">
-        <label>password</label>
-        <input class="login" type="password">
-        </div>
-
-        <div class="input">
-            <label>email</label>
-            <input class="login" type="text">
-            </div>
-
-<button>Save</button>
+    <h2>Enregistrement d'un nouveau joueur</h2>
+    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <label for="username">Nom d'utilisateur:</label>
+        <input type="text" id="username" formControlName="username" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="password">Mot de passe:</label>
+        <input type="password" id="password" formControlName="password" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="cpassword">Confirmation du mot de passe:</label>
+        <input type="password" id="cpassword" formControlName="cpassword" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="email">Email:</label>
+        <input type="email" id="email" formControlName="email" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="provincename">Province name:</label>
+        <input type="text" id="provincename" formControlName="provincename" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary">S'inscrire</button>
+    </form>
+</div>

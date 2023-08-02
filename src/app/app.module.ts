@@ -35,10 +35,11 @@ import { RddetailsComponent } from './pages/rddetails/rddetails.component';
 import { WalloffameComponent } from './pages/walloffame/walloffame.component';
 
 import { TeststyleComponent } from './pages/teststyle/teststyle.component';
+import { ReactiveFormsModule } from '@angular/forms'; 
 
 @NgModule({
   declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, LoginComponent, InputtextComponent, InputpasswordComponent, RegisterComponent, InfoComponent, MenuComponent, ProvincelistComponent, ProvincedetailsComponent, ProvincebuildComponent, RessourcesComponent, BuildinglistComponent, BuildingbuildComponent, BuildingdetailsComponent, LegionlistComponent, BattlelistComponent, BattleattaqueComponent, BattledefendreComponent, BattlewinComponent, BattleloseComponent, RdlistComponent, RddetailsComponent, WalloffameComponent, TeststyleComponent],
-  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule],
+  imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule,ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],
 })
