@@ -1,28 +1,13 @@
-<!-- <h1>Login</h1>
-
-<div class="input">
-    <label>username</label>
-    <input class="login" type="text"/>
-    </div>
-
-    <div class="input">
-        <label>password</label>
-        <input class="login" type="password"/>
-        </div>
-
-<button>Save</button>
- -->
-
- <body>
+<body>
     <section>
-        <form>
+        <form [formGroup]="connectForm" (ngSubmit)="onSubmit()">
             <h1>Login</h1>
             <div class="inputbox">
-                <input type="email" required>
+                <input id="username" formControlName="username" type="email" required>
                 <label for="">Email</label>
             </div>
             <div class="inputbox">
-                <input type="password" required>
+                <input id="password" formControlName="password" type="password" required>
                 <label for="">Password</label>
             </div>
             <div class="forget">

@@ -1,4 +1,4 @@
-<h1>Modifier Informations</h1>
+<!--<h1>Modifier Informations</h1>
 
 <div class="input">
     <label>username</label>
@@ -16,4 +16,10 @@
             </div>
 
 
-<button>Save</button>
+<button>Save</button> -->
+
+<div *ngIf="playerInfo">
+    <h2>Player Information</h2>
+    <p>Login: {{ playerInfo.login }}</p>
+    <p>Email: {{ playerInfo.email }}</p>
+  </div>

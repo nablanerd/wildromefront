@@ -112,6 +112,7 @@ div.ressource {
   align-items: center;
   border: 5px solid transparent;
   background-color: #8F5A00;
+
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(150, 0, 18, 0.5);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
@@ -148,7 +149,7 @@ ul.ressource_list {
 }
 
 ul.ressource_list li {
-  color: #D7CBA3;
+  color: rgba(150, 0, 18, 1);
   display: flex;
   flex-direction: column;
   align-items: center;

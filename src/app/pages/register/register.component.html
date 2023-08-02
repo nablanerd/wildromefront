@@ -1,40 +1,24 @@
-<!-- <h1>Inscription</h1>
-
-<div class="input">
-    <label>username</label>
-    <input class="login" type="text">
-    </div>
-
-    <div class="input">
-        <label>password</label>
-        <input class="login" type="password">
-        </div>
-
-        <div class="input">
-            <label>email</label>
-            <input class="login" type="text">
-            </div>
-
-<button>Save</button>
- -->
-
- <body>
+<body>
     <div id="container">
        <header>Register new player</header>
-       <form method="post">
+       <form method="post" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <fieldset>
              <br/>
-             <input type="text" name="username" id="username" placeholder="Username" required autofocus>
+             <input formControlName="username" for="username" type="text" name="username" id="username" placeholder="Username" required autofocus>
              <br/><br/>
-             <input type="email" name="email" id="email" placeholder="E-mail" required>
+             <input formControlName="email" for="email" type="email" name="email" id="email" placeholder="E-mail" required>
              <br/><br/>
-             <input type="password" name="password" id="password" placeholder="Password" required>
+             <input formControlName="password" for="password" type="password" name="password" id="password" placeholder="Password" required>
              <br/><br/>
-             <input type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" required>
-             <br/> <br/> <br/>
+             <input formControlName="cpassword" for="cpassword"  type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" required>
+             <br/> <br/>
+            <input formControlName="provincename" type="text" id="provincename" name="provincename" id="provincename" placeholder="Province Name"  required>
+          
+            <br/> <br/> <br/>
              <label for="submit"></label>
              <input type="submit" name="submit" id="submit" value="REGISTER">
-          </fieldset>
+            </fieldset>
        </form>
     </div>
+
  </body>
