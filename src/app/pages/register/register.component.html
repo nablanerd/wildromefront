@@ -1,28 +1,22 @@
-<h1>Inscription</h1>
-
-<div class="input">
-    <h2>Enregistrement d'un nouveau joueur</h2>
-    <form [formGroup]="registerForm" (ngSubmit)="onSubmit()">
-      <div class="form-group">
-        <label for="username">Nom d'utilisateur:</label>
-        <input type="text" id="username" formControlName="username" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="password">Mot de passe:</label>
-        <input type="password" id="password" formControlName="password" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="cpassword">Confirmation du mot de passe:</label>
-        <input type="password" id="cpassword" formControlName="cpassword" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="email">Email:</label>
-        <input type="email" id="email" formControlName="email" class="form-control" required>
-      </div>
-      <div class="form-group">
-        <label for="provincename">Province name:</label>
-        <input type="text" id="provincename" formControlName="provincename" class="form-control" required>
-      </div>
-      <button type="submit" class="btn btn-primary">S'inscrire</button>
-    </form>
-</div>
+<body>
+    <div id="container">
+       <header>Register new player</header>
+       <form  [formGroup]="registerForm" (ngSubmit)="onSubmit()" >
+          <fieldset>
+             <br/>
+             <input formControlName="username"  type="text" name="username" id="username" placeholder="Username" required autofocus>
+             <br/><br/>
+             <input formControlName="email" type="email" name="email" id="email" placeholder="E-mail" required>
+             <br/><br/>
+             <input formControlName="password" type="password" name="password" id="password" placeholder="Password" required>
+             <br/><br/>
+             <input formControlName="cpassword" type="password" name="confirm-password" id="confirm-password" placeholder="Confirm Password" required>
+             <br/> <br/> 
+             <input formControlName="provincename" type="text" name="provincename" id="provincename" placeholder="Province Name" required>
+             <br/>  <br/>
+             <label for="submit"></label>
+             <input type="submit" name="submit" id="submit" value="REGISTER">
+            </fieldset>
+       </form>
+    </div>
+ </body>
