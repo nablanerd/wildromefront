@@ -409,7 +409,27 @@ div.content {
       transform: translateY(0) scale(0.98);
     }
   }
+  ul.enemies-list {
+    margin-top: 15px;
+    display: flex; 
+    align-items: center; 
+    justify-content: space-around; 
+    li {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      margin: 10px 0;
+
+      img {
+        width: 50px; 
+        height: 80px; 
+        border-radius: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
 }
+
 
 /* ========== Animation Keyframes ========== */
 

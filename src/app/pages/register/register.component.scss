@@ -1,10 +1,4 @@
-/* div.input {
-    display: flex;
-    flex-direction: column;
-}
- */
-
- html {
+html {
     height: 100%;
     width: 100%;
 }
@@ -16,9 +10,9 @@ body {
 }
 
 #container {
-    background: rgba(143, 90, 0, 0.5);
-    width: 18.75rem;
-    height: 25rem;
+    background: rgba(143, 90, 0, 0.2);
+    width: 21rem;
+    height: 30rem;
     margin: auto;
     position: absolute;
     top: 0;
@@ -26,6 +20,9 @@ body {
     right: 0;
     bottom: 0;
     opacity: 2;
+    backdrop-filter: blur(55px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
 }
 
 header {
@@ -33,9 +30,12 @@ header {
     vertical-align: middle;
     line-height: 3rem;
     height: 3rem;
-    background: rgba(143, 90, 0, 0.9);
+    background: rgba(143, 90, 0, 0.6);
     font-size: 1.4rem;
     color: #d3d3d3;
+    backdrop-filter: blur(55px);
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    border-radius: 20px;
 }
 
 fieldset {

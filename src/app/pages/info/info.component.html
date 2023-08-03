@@ -1,25 +1,80 @@
-<!--<h1>Modifier Informations</h1>
+<section class='info'>
+</section>
+ 
+ <div class='clouds'>
+   <div class='clouds-1'></div>
+   <div class='clouds-2'></div>
+   <div class='clouds-3'></div>
+ </div>
+ 
+<!--  ============================================================================================ -->
 
-<div class="input">
-    <label>username</label>
-    <input class="login" type="text"/>
-    </div>
+<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"> 
 
-    <div class="input">
-        <label>password</label>
-        <input class="login" type="password"/>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="assets/logo.jpg" alt="Logo" class="logo">
+            <h1 class="mainTitle">WILDROME</h1>
+            <app-menu></app-menu>
         </div>
-
-        <div class="input">
-            <label>email</label>
-            <input class="login" type="email"/>
+        <div class="main">
+            <div class="ressource">
+                <ul class="ressource_list">
+                    <li>
+                        <img src="assets/wood.png" alt="Image 1">
+                        <span class="ressource_element1">bois 0</span>
+                    </li>
+                    <li>
+                        <img src="assets/water.jpg" alt="Image 2">
+                        <span class="ressource_element2">eau 0</span>
+                    </li>
+                    <li>
+                        <img src="assets/food.png" alt="Image 3">
+                        <span class="ressource_element3">nourriture 0</span>
+                    </li>
+                    <li>
+                        <img src="assets/coins.png" alt="Image 4">
+                        <span class="ressource_element4">Argent 0</span>
+                    </li>
+                </ul>
             </div>
+            <div class="title">
+                <h1>Player ♚</h1>
+                <h2>Info</h2></div>
+            <div class="content">
+                <table>
+                    <tr>
+                        <th>Login:</th>
+                        <td id="login"></td>
+                    </tr>
+                    <tr>
+                        <th>Email:</th>
+                        <td id="email"></td>
+                    </tr>
+                    <tr>
+                        <th>Province Name:</th>
+                        <td id="provinceName"></td>
+                    </tr>
+                    <tr>
+                        <th>Province Population:</th>
+                        <td id="provincePopulation"></td>
+                    </tr>
+                    <tr>
+                        <th>Wood:</th>
+                        <td id="wood"></td>
+                    </tr>
+                    <tr>
+                        <th>Water:</th>
+                        <td id="water"></td>
+                    </tr>
+                    <tr>
+                        <th>Food:</th>
+                        <td id="food"></td>
+                    </tr>
+                </table>
+            </div>
+            </div>
+        </div>
+</body>
 
-
-<button>Save</button> -->
-
-<div *ngIf="playerInfo">
-    <h2>Player Information</h2>
-    <p>Login: {{ playerInfo.login }}</p>
-    <p>Email: {{ playerInfo.email }}</p>
-  </div>
