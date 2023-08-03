@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import {Router} from "@angular/router"
+
 @Component({
   selector: 'app-register',
   templateUrl: './register.component.html',
@@ -10,7 +12,7 @@ export class RegisterComponent {
 
   registerForm!: FormGroup; 
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.registerForm = this.formBuilder.group({
@@ -38,6 +40,9 @@ export class RegisterComponent {
     .then(data => {
   
       console.log(data);
+
+      this.router.navigate(['/login'])
+
     })
     .catch(error => {
       console.error('Error:', error);
