@@ -116,6 +116,13 @@ div.ressource {
   box-shadow: 0 0 10px rgba(150, 0, 18, 0.5);
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 
+  padding: 9px;
+  background-color: rgba(143, 90, 0, 0.1);
+  border: 5px solid rgba(150, 0, 18, 1);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(150, 0, 18, 0.2);
+  margin-top: 0.5px;
+
   &:before {
     content: '';
     position: absolute;
@@ -330,7 +337,7 @@ div.title {
   border-radius: 20px;
   display: flex;
   align-items: center;
-  justify-content:space-evenly;
+  justify-content: space-evenly;
   text-align: center;
   overflow: hidden; 
   user-select: none;
@@ -339,150 +346,93 @@ div.title {
   @media (max-width: 480px) {
     font-size: 20px;
   }
+  padding: 9px;
+  background-color: rgba(143, 90, 0, 0.1);
+  border: 5px solid rgba(150, 0, 18, 1);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(150, 0, 18, 0.2);
+  margin-top: 15px;
 }
 
 /* ========== Content Styles ========== */
-  div.content {
-      position: relative;
-      border: 5px solid #960012;
-      background-color: #8F5A00;
-      color: #D7CBA3;
-      margin-top: 10px;
-      width: 439px;
-      height: 295px;
-      border-radius: 20px;
-      align-items: center;
-      align-content: center;
-      text-align: center;
+div.content {
+  position: relative;
+  border: 5px solid #960012;
+  background-color: #8F5A00;
+  color: #D7CBA3;
+  margin-top: 10px; 
+  width:480px;
+  height:288px;
+  border-radius: 20px;
+  align-items: center;
+  align-content: center;
+  text-align: center;
+  
+  padding: 9px;
+  background-color: rgba(143, 90, 0, 0.1);
+  border: 5px solid rgba(150, 0, 18, 1);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(150, 0, 18, 0.2);
+  margin-top: 5px;
 
-      overflow-y: scroll;
-      scrollbar-width: thin;
-      scrollbar-color: #D7CBA3 #8F5A00;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #D7CBA3 #8F5A00;
 
-      &::-webkit-scrollbar {
-        width: 10px;
-      }
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
 
-      &::-webkit-scrollbar-thumb {
-        background-color: #D7CBA3;
-        border-radius: 10px;
-        transition: box-shadow 0.3s ease-in-out;
-      }
+  &::-webkit-scrollbar-thumb {
+    background-color: #D7CBA3;
+    border-radius: 10px;
+    transition: box-shadow 0.3s ease-in-out;
+  }
 
-      &::-webkit-scrollbar-thumb:hover {
-        box-shadow: 0 0 10px rgba(215, 203, 163, 0.7);
-        animation: pulse 1s infinite alternate;
-      }
+  &::-webkit-scrollbar-thumb:hover {
+    box-shadow: 0 0 10px rgba(215, 203, 163, 0.7);
+    animation: pulse 1s infinite alternate;
+  }
 
-      &::-webkit-scrollbar-track {
-        background-color: #8F5A00;
-      }
-      
-      h3 {
-        font-size: 1.5rem;
-        margin-top: 20px;
-      }
-      
-      ul {
-        list-style: none;
-        padding: 0;
-        
-        li {
-          font-size: 1.2rem;
-          margin: 5px 0;
-        }
-      }
-    padding: 20px;
-    background-color: rgba(143, 90, 0, 0.1);
-    border: 5px solid rgba(150, 0, 18, 1);
-    border-radius: 20px;
-    box-shadow: 0 0 20px rgba(150, 0, 18, 0.2);
+  &::-webkit-scrollbar-track {
+    background-color: #8F5A00;
+  }
+  h3 {
+    font-size: 1.5rem;
     margin-top: 20px;
-  
-    table {
-      width: 100%;
-      border-collapse: collapse;
-  
-      th, td {
-        padding: 15px;
-        text-align: left;
-        border-bottom: 1px solid rgba(235, 30, 54, 0.3);
-        color: rgba(143, 90, 0, 1);
-  
-        th {
-          background-color: rgba(235, 30, 54, 0.5);
-          font-weight: bold;
-        }
-      }
-  
-      tr:last-child td {
-        border-bottom: none;
-      }
-    }
   }
   
-  
-  
-  button {
-    background-color: #960012;
-    color: #D7CBA3;
-    border: none;
-    padding: 4px 8px;
-    margin: 0 4px;
-    border-radius: 8px;
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+  ul {
+    list-style: none;
+    padding: 0;
     
-    &:hover {
-      background-color: #B2000C;
-      transform: scale(1.1);
-    }
-  }
-  
-  a {
-    display: inline-block;
-    margin-top: 20px;
-    background-color: #960012;
-    color: #D7CBA3;
-    padding: 10px 20px;
-    text-decoration: none;
-    border: 1px solid #D7CBA3;
-    border-radius: 20px;
-    transition: border-color 0.3s ease, background-color 0.3s ease, transform 0.3s ease;
-    
-    &:hover {
-      border-color: #B2000C;
-      background-color: #B2000C;
-      transform: translateY(-2px) scale(1.02);
-    }
-    
-    &:active {
-      border-color: #960012;
-      background-color: #960012;
-      transform: translateY(0) scale(0.98);
-    }
-  }
-  ul.enemies-list {
-    margin-top: 15px;
-    display: flex; 
-    align-items: center; 
-    justify-content: space-around; 
     li {
-      display: flex;
-      align-items: center;
       font-size: 1.2rem;
-      margin: 10px 0;
-
-      img {
-        width: 50px; 
-        height: 80px; 
-        border-radius: 20px;
-        margin-right: 10px;
-      }
+      margin: 5px 0;
     }
+  }
 
+table {
+  width: 100%;
+  border-collapse: collapse;
+
+  th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid rgba(235, 30, 54, 0.3);
+    color: rgba(143, 90, 0, 1);
+
+    th {
+      background-color: rgba(235, 30, 54, 0.5);
+      font-weight: bold;
+    }
+  }
+
+  tr:last-child td {
+    border-bottom: none;
+  }
+  }
 }
-
 
 /* ========== Animation Keyframes ========== */
 

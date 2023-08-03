@@ -14,6 +14,13 @@ ul.menu {
   overflow-y: scroll;
   height: 340px;
 
+  padding: 9px;
+  background-color: rgba(143, 90, 0, 0.1);
+  border: 5px solid rgba(150, 0, 18, 1);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(150, 0, 18, 0.2);
+  margin-top: 5px;
+
   scrollbar-width: thin;
   scrollbar-color: #D7CBA3 #8F5A00;
 
