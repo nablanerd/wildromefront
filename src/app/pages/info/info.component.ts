@@ -25,7 +25,6 @@ export class InfoComponent implements OnInit{
       fetch('http://localhost:8080/auth/info', {
         method: 'GET',
         headers: {
-          'Content-Type': 'application/json',
           'x-token': token
         }
       })
