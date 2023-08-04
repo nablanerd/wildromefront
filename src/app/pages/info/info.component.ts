@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PlayerService } from 'src/app/services/player.service';
+
+import {Router} from "@angular/router"
+
 
 @Component({
   selector: 'app-info',
@@ -8,43 +12,26 @@ import { Component, OnInit } from '@angular/core';
 
 
 export class InfoComponent implements OnInit{
-  playerInfo: any;
+  playerInfo: any = null;
 
-  constructor() { }
+  constructor(private playerservice : PlayerService, private router: Router) { }
 
   ngOnInit() {
-    console.log("**** 1");
-    this.getPlayerInfo();
-    console.log("**** 2");
-  }
 
-  getPlayerInfo() {
-    const token = localStorage.getItem('token');
+    
+      this.playerservice.getPlayerInfo((foo : any)=>{
 
-    if (token) {
-      fetch('http://localhost:8080/auth/info', {
-        method: 'GET',
-        headers: {
-          'x-token': token
-        }
-      })
-      .then(response => response.json())
-      .then(data => {
-        this.playerInfo = data.data;
-        console.log("**** 3");
-        console.log(this.playerInfo);
-        console.log("**** 4");
-      })
-      .catch(error => {
-        console.error('Error:', error);
-
-        
+        console.log(foo, "foo");
+  
+  this.playerInfo = foo;
       });
-    } else {
-      // Gérer le cas où le token n'est pas présent dans le localStorage
-      console.error('Token not found in localStorage.');
-    }
+
+    
+    
+
   }
+
+  
 }
   
   

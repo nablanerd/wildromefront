@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 
+import {Router} from "@angular/router"
+
+
 @Component({
   selector: 'app-provincelist',
   templateUrl: './provincelist.component.html',
@@ -8,6 +11,9 @@ import { Component, OnInit } from '@angular/core';
 export class ProvincelistComponent implements OnInit {
 
    provinces: any;
+
+   constructor(private router: Router) { }
+
 
   ngOnInit() {
 
@@ -46,5 +52,17 @@ export class ProvincelistComponent implements OnInit {
 
   }
 
+
+  goToBuilding(idProvince :number, nameProvince : string)
+  {
+
+    localStorage.setItem("provinceID", idProvince.toString())
+    localStorage.setItem("provinceName", nameProvince)
+
+    this.router.navigate(['/buildinglist'])
+
+
+
+  }
 
 }

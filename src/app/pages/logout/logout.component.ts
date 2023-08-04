@@ -1,19 +1,28 @@
-import { Component } from '@angular/core';
+import { Component , OnInit } from '@angular/core';
 
 import {Router} from "@angular/router"
 
+
 @Component({
-  selector: 'app-menu',
-  templateUrl: './menu.component.html',
-  styleUrls: ['./menu.component.scss']
+  selector: 'app-logout',
+  templateUrl: './logout.component.html',
+  styleUrls: ['./logout.component.scss']
 })
-export class MenuComponent {
+export class LogoutComponent implements OnInit {
 
   constructor( private router: Router) { }
 
 
+  ngOnInit() {
+
+
+
+    this.logOut()
+
+  }
+
+
   logOut() {
-    
     const token = localStorage.getItem('token');
 
     if (token) {
@@ -26,8 +35,8 @@ export class MenuComponent {
       .then(response => response.json())
       .then(data => {
         console.log(data, 'DATA');
+        
         localStorage.removeItem('token');
-
 
         this.router.navigate(['/login'])
 
@@ -42,10 +51,7 @@ export class MenuComponent {
     }
   }
 
-
-  isLogged()
-  {
-
-
-  }
 }
+
+
+  

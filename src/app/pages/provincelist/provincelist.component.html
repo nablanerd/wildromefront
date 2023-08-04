@@ -45,25 +45,16 @@
                 <div class="content">
                     <a type="button" [routerLink]="['/provincebuild']">⛏ construire une province ⛏</a>
                 
-                    <ul class="province-list">
+                    <ul class="province-list" *ngFor="let province of provinces;">
                         <li>
-                            <a type="button" [routerLink]="['/provincedetails']">
                                 <img src="/assets/province1.jpg" alt="Province 1">
-                                province n°1
-                            </a>
-                        </li>
-                        <li>
-                            <a type="button" [routerLink]="['/provincedetails']">
-                                <img src="/assets/province2.jpg" alt="Province 2">
-                                province n°2
-                            </a>
-                        </li>
-                        <li>
-                            <a type="button" [routerLink]="['/provincedetails']">
-                                <img src="/assets/province3.jpg" alt="Province 3">
-                                province n°3
-                            </a>
-                        </li>
+                               {{province.name}} - {{province.id}} 
+                          
+                  <button (click) = "goToBuilding(province.id, province.name)">liste batiments</button>
+
+           
+                      </li>
+                      
                     </ul>
                 </div>
             </div>

@@ -18,7 +18,7 @@
             <h1 class="mainTitle">WILDROME</h1>
             <app-menu></app-menu>
         </div>
-        <div class="main">
+        <div class="main"><!-- 
             <div class="ressource">
                 <ul class="ressource_list">
                     <li>
@@ -38,7 +38,9 @@
                         <span class="ressource_element4">Argent 0</span>
                     </li>
                 </ul>
-            </div>
+            </div> -->
+
+            <app-ressources></app-ressources>
             <div class="title">
                 <h1>Player ♚</h1>
                 <h2>Info</h2></div>
@@ -46,31 +48,31 @@
                 <table>
                     <tr>
                         <th>Login:</th>
-                        <td id="login">{{ this.playerInfo.login }}</td>
+                        <td *ngIf="this.playerInfo" id="login">{{ this.playerInfo.login }}</td>
                     </tr>
                     <tr>
                         <th>Email:</th>
-                        <td id="email">{{ playerInfo.email }}</td>
+                        <td *ngIf="this.playerInfo" id="email">{{ playerInfo.email }}</td>
                     </tr>
                     <tr>
                         <th>Province Name:</th>
-                        <td id="provinceName">{{ playerInfo.provinceName }}</td>
+                        <td *ngIf="this.playerInfo" id="provinceName">{{ playerInfo.provinceName }}</td>
                     </tr>
                     <tr>
                         <th>Province Population:</th>
-                        <td id="provincePopulation">{{ playerInfo.provincePopulation }}</td>
+                        <td *ngIf="this.playerInfo" id="provincePopulation">{{ playerInfo.provincePopulation }}</td>
                     </tr>
                     <tr>
                         <th>Wood:</th>
-                        <td id="wood">{{ playerInfo.wood }}</td>
+                        <td *ngIf="this.playerInfo" id="wood">{{ playerInfo.wood }}</td>
                     </tr>
                     <tr>
                         <th>Water:</th>
-                        <td id="water">{{ playerInfo.water }}</td>
+                        <td *ngIf="this.playerInfo" id="water">{{ playerInfo.water }}</td>
                     </tr>
                     <tr>
                         <th>Food:</th>
-                        <td id="food">{{ playerInfo.food }}</td>
+                        <td *ngIf="this.playerInfo" id="food">{{ playerInfo.food }}</td>
                     </tr>
                 </table>
             </div>

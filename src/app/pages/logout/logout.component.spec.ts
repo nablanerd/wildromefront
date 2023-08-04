@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { RessourceComponent } from './ressource.component';
+import { LogoutComponent } from './logout.component';
 
-describe('RessourceComponent', () => {
-  let component: RessourceComponent;
-  let fixture: ComponentFixture<RessourceComponent>;
+describe('LogoutComponent', () => {
+  let component: LogoutComponent;
+  let fixture: ComponentFixture<LogoutComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ RessourceComponent ]
+      declarations: [ LogoutComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(RessourceComponent);
+    fixture = TestBed.createComponent(LogoutComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

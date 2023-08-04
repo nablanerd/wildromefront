@@ -23,6 +23,14 @@ import { RddetailsComponent } from './pages/rddetails/rddetails.component';
 import { WalloffameComponent } from './pages/walloffame/walloffame.component';
 import { TeststyleComponent } from './pages/teststyle/teststyle.component';
 
+
+import { RessourcePageComponent } from './pages/ressourcepagecomponent/ressourcepagecomponent.component';
+import { LogoutComponent } from './pages/logout/logout.component';
+
+
+
+
+
 const routes: Routes = [
   { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
@@ -53,6 +61,15 @@ const routes: Routes = [
 
 
   { path: 'teststyle', component: TeststyleComponent },
+
+
+  { path: 'ressourcepage', component: RessourcePageComponent },
+
+
+  { path: 'logout', component: LogoutComponent },
+
+
+
 
 
 
