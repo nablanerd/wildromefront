@@ -26,7 +26,7 @@ export class InfoComponent implements OnInit{
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${token}`
+          'x-token': token
         }
       })
       .then(response => response.json())
@@ -38,6 +38,8 @@ export class InfoComponent implements OnInit{
       })
       .catch(error => {
         console.error('Error:', error);
+
+        
       });
     } else {
       // Gérer le cas où le token n'est pas présent dans le localStorage

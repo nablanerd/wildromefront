@@ -24,7 +24,7 @@ import { WalloffameComponent } from './pages/walloffame/walloffame.component';
 import { TeststyleComponent } from './pages/teststyle/teststyle.component';
 
 const routes: Routes = [
-  { path: '', component: DemoPageComponent },
+  { path: '', component: LoginComponent },
   { path: 'login', component: LoginComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'info', component: InfoComponent },

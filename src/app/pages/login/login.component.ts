@@ -2,6 +2,7 @@ import { Token } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
+import {Router} from "@angular/router"
 
 @Component({
   selector: 'app-login',
@@ -12,7 +13,7 @@ export class LoginComponent implements OnInit{
   
   connectForm!: FormGroup; 
 
-  constructor(private formBuilder: FormBuilder) { }
+  constructor(private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit() {
     this.connectForm = this.formBuilder.group({
@@ -27,6 +28,8 @@ export class LoginComponent implements OnInit{
   const formData = this.connectForm.value;
 
  
+  console.log("formData", formData);
+  
   fetch('http://localhost:8080/auth/login', {
     method: 'POST',
     headers: {
@@ -38,6 +41,9 @@ export class LoginComponent implements OnInit{
   .then(data => {
     localStorage.setItem("token", data.data.token );
     console.log(data.data.token);
+
+
+    this.router.navigate(['/info'])
     
   })
   .catch(error => {
