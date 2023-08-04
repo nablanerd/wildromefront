@@ -47,9 +47,12 @@
                 
                     <ul class="province-list" *ngFor="let province of provinces;">
                         <li>
-                                <img src="/assets/province1.jpg" alt="Province 1">
-                               {{province.name}} - {{province.id}} 
                           
+                               <a type="button" >
+                                <img src="/assets/province1.jpg" alt="Province 1">
+                                {{province.name}} - {{province.id}} 
+                            </a>
+
                   <button (click) = "goToBuilding(province.id, province.name)">liste batiments</button>
 
            
