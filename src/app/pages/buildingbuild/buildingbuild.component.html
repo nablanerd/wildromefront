@@ -4,9 +4,24 @@
 
 <h1>BATIMENT</h1>
 <h2>Construction</h2>
+<h3>Name Province: {{provinceName}}</h3>
 
 <h3>Choisir un type</h3>
+<select #buildingslist  (change)='onSelect(buildingslist.value)'>
+    
+    <option  value="null">Select building</option>
 
+    <option *ngFor="let option of buildings" [value]="option.type">
+        {{ option.type }}
+     </option>
+
+</select>
+
+<p *ngIf="building">Name : {{building.name}}</p>
+<p *ngIf="building">Force : {{building.strength}}</p>
+<p *ngIf="building">Prix bois : {{building.woodprice}}</p>
+
+<!--
 <ul>
     <li>Type 1</li>
     <li>Type 2</li>
@@ -23,5 +38,7 @@
 
 </ul>
 
+-->
 
-<button>Construire</button>
+<br>
+<button (click)="onBuild()">Construire</button>

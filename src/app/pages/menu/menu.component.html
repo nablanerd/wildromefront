@@ -1,56 +1,70 @@
+
 <ul class="menu">
   <li><a class="button" href="#">Accueil</a></li>
 
-    <li>
-  
-      <a class="button"[routerLink]="['/login']">Login</a>
-  
-    </li>
-  
-    <li>
-  
-      <a class="button"[routerLink]="['/register']">Inscription</a>
-  
-    </li>
-  
-    <li>
-  
-        <a class="button"[routerLink]="['/info']">Profil</a>
-    
-      </li>
+  <li *ngIf="isLogged()">
+
+    <a class="button" [routerLink]="['/login']">Login</a>
+
+  </li>
+
+  <li *ngIf="isLogged()">
+
+    <a class="button" [routerLink]="['/register']">Inscription</a>
+
+  </li>
+
+  <li>
+
+   <!-- <a class="button" [routerLink]="['/logout']">Log out</a>-->
+
+    <button (click)="logOut()">LOG OUT</button>
+  </li>
+
+  <li>
+
+    <a class="button" [routerLink]="['/info']">Profil</a>
+
+  </li>
 
 
-      <li>
-  
-        <a class="button"[routerLink]="['/provincelist']">Provinces</a>
-    
-      </li>
+  <li>
 
-      <li>
-  
-        <a class="button"[routerLink]="['/legionlist']">Légions</a>
-    
-      </li>
+    <a class="button" [routerLink]="['/ressourcepage']">Ressources</a>
 
-      <li>
-  
-        <a class="button"[routerLink]="['/battlelist']">Bataille</a>
-    
-      </li>
+  </li>
 
-      <li>
-  
-        <a class="button"[routerLink]="['/rdlist']">R&D</a>
-    
-      </li>
+  <li>
 
+    <a class="button" [routerLink]="['/provincelist']">Provinces</a>
 
-      <li>
-  
-        <a class="button"[routerLink]="['/walloffame']">Classement</a>
-    
-      </li>
+  </li>
 
+  <li>
+
+    <a class="button" [routerLink]="['/legionlist']">Légions</a>
+
+  </li>
+
+  <li>
+
+    <a class="button" [routerLink]="['/battlelist']">Bataille</a>
+
+  </li>
+
+  <li>
+
+    <a class="button" [routerLink]="['/rdlist']">R&D</a>
+
+  </li>
 
 
-  </ul>
+  <li>
+
+    <a class="button" [routerLink]="['/walloffame']">Classement</a>
+
+  </li>
+
+
+
+</ul>

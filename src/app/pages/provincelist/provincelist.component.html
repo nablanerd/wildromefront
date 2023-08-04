@@ -8,5 +8,7 @@
 <a type="button" [routerLink]="['/provincebuild']">construire une province</a>
 
 <ul *ngFor="let province of provinces;">
-    <li> {{province.name}}<a type="button" [routerLink]="['/buildinglist']">liste batiments</a></li>
+    <li> {{province.name}} - {{province.id}} </li>
+
+    <button (click) = "goToBuilding(province.id, province.name)">liste batiments</button>
 </ul>
