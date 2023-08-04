@@ -186,6 +186,22 @@ ul.ressource_list span {
   }
 }
 
+ul.ressource_list {
+	position: relative;
+}
+
+ul.ressource_list::before {
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	content: attr(data-text);
+	border-right: 2px solid rgba(150, 0, 18, 1);
+	animation: animate 6s linear infinite;
+}
+
 /* ========== Logo and Main Title Styles ========== */
 .logo {
   position: relative;
@@ -464,8 +480,31 @@ div.content {
       margin: 10px 0;
 
       img {
-        width: 50px; 
-        height: 80px; 
+        width: 60px; 
+        height: 90px; 
+        border-radius: 20px;
+        margin-right: 10px;
+      }
+    }
+  }
+
+  ul.legion-list {
+    margin-top: 15px;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  
+    li {
+      display: flex;
+      align-items: center;
+      font-size: 1.2rem;
+      margin: 10px 0;
+  
+      img {
+        width: 130px;
+        height: 100px;
         border-radius: 20px;
         margin-right: 10px;
       }
@@ -563,4 +602,17 @@ div.content {
   75% {
     color: #c7b481a8;
   }
+}
+
+@keyframes animate {
+	0%,
+	10%,
+	100% {
+		width: 0;
+	}
+
+	70%,
+	90% {
+		width: 100%;
+	}
 }

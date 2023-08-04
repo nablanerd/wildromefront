@@ -1,84 +1,99 @@
 div.ressource {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    border: 5px solid #960012 /* transparent */;
-    background-color: #8F5A00;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(150, 0, 18, 0.5);
-    transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  
-    &:before {
-      content: '';
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      right: -5px;
-      bottom: -5px;
-      border: 3px solid transparent;
-      border-radius: 15px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-    }
-  
-    &:hover {
-      border-color: #B2000C;
-      box-shadow: 0 0 20px rgba(150, 0, 18, 0.7);
-    }
-  
-    &:hover:before {
-      opacity: 1;
-      animation: pulsate 2s infinite;
-    }
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 5px solid transparent;
+  background-color: #8F5A00;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(150, 0, 18, 0.5);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+  padding: 9px;
+  background-color: rgba(143, 90, 0, 0.1);
+  border: 5px solid rgba(150, 0, 18, 1);
+  border-radius: 20px;
+  box-shadow: 0 0 20px rgba(150, 0, 18, 0.2);
+  margin-top: 0.5px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    inset: -5px;
+    border: 3px solid transparent;
+    border-radius: 15px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
-  
-  ul.ressource_list {
-    list-style: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+
+  &:hover {
+    border-color: #B2000C;
+    box-shadow: 0 0 20px rgba(150, 0, 18, 0.7);
   }
-  
-  ul.ressource_list li {
-    color: #D7CBA3;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 2px;
-    margin-left: 0.1px;
-    margin-right: 0.1px;
-    margin-top: 0.1px;
-    margin-bottom: 0.1px;
-    width:109px;
+
+  &:hover:before {
+    opacity: 1;
+    animation: pulsate 2s infinite;
   }
-  
-  ul.ressource_list img {
-    width: 60px; 
-    height: 55px;
-    border-radius: 8px;
-  }
-  
-  ul.ressource_list span {
-    font-size: 18px;
-    
-  }
-  
-  span.ressource_element1 {
+}
+
+ul.ressource_list {
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+ul.ressource_list li {
+  color: #D7CBA3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 2px;
+  width: 109px;
+}
+
+ul.ressource_list img {
+  width: 60px;
+  height: 55px;
+  border-radius: 8px;
+}
+
+ul.ressource_list span {
+  font-size: 18px;
+  &.ressource_element1 {
     animation: glitch 2.8s infinite;
   }
-  
-  span.ressource_element2 {
+  &.ressource_element2 {
     animation: glitch 3.3s infinite;
   }
-  
-  span.ressource_element3 {
+  &.ressource_element3 {
     animation: glitch 3.7s infinite;
   }
-  
-  span.ressource_element4 {
+  &.ressource_element4 {
     animation: glitch 4s infinite;
   }
+}
+
+ul.ressource_list {
+	position: relative;
+}
+
+ul.ressource_list::before {
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	overflow: hidden;
+	position: absolute;
+	content: attr(data-text);
+	border-right: 2px solid rgba(150, 0, 18, 1);
+	animation: animate 6s linear infinite;
+}
   
   @keyframes glitch {
     0% {
@@ -115,5 +130,18 @@ div.ressource {
     100% {
       transform: scale(1);
       border-color: rgba(255, 0, 0, 0.4);
+    }
+  }
+
+  @keyframes animate {
+    0%,
+    10%,
+    100% {
+      width: 0;
+    }
+  
+    70%,
+    90% {
+      width: 100%;
     }
   }
