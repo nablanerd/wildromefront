@@ -12,6 +12,9 @@ export class RegisterComponent {
 
   registerForm!: FormGroup; 
 
+  errorMessage : string ="";
+
+
   constructor(private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit() {
@@ -28,7 +31,9 @@ export class RegisterComponent {
     
     const formData = this.registerForm.value;
   
-  
+    if(formData.password === formData.cpassword && (formData.password && formData.cpassword))
+    {
+
     fetch('http://localhost:8080/auth/register2', {
       method: 'POST',
       headers: {
@@ -37,16 +42,33 @@ export class RegisterComponent {
       body: JSON.stringify(formData)
     })
     .then(response => response.json())
-    .then(data => {
+    .then(body => {
   
-      console.log(data);
+      console.log(body);
 
-      this.router.navigate(['/login'])
+if(body.data.message === "Invalid params")
+{
+this.errorMessage = "Invalid params"
+}
+else 
+{
+  this.router.navigate(['/login'])
+}
+
+
+      
 
     })
     .catch(error => {
       console.error('Error:', error);
     });
   }
+
+  else {
+this.errorMessage = "Password and Confirmed Password different or incorrect"
+
+  }
+
+}
 
 }

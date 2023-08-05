@@ -13,6 +13,8 @@ export class LoginComponent implements OnInit{
   
   connectForm!: FormGroup; 
 
+  errorMessage : string ="";
+
   constructor(private formBuilder: FormBuilder, private router: Router) { }
 
   ngOnInit() {
@@ -29,7 +31,10 @@ export class LoginComponent implements OnInit{
 
  
   console.log("formData", formData);
-  
+
+  if(formData.username && formData.password)
+  {
+
   fetch('http://localhost:8080/auth/login', {
     method: 'POST',
     headers: {
@@ -37,13 +42,35 @@ export class LoginComponent implements OnInit{
     },
     body: JSON.stringify(formData)
   })
-  .then(response => response.json())
-  .then(data => {
-    localStorage.setItem("token", data.data.token );
-    console.log(data.data.token);
+  .then(response => {
+    
+    if(response.status == 400)
+    {
+      throw new Error('BAD_REQUEST')
+    }
+    else
+    {
 
+      return response.json()
+    }
+    
+  })
+  .then(body => {
 
+if(body.data)
+{
+  localStorage.setItem("token", body.data.token );
+    console.log(body.data.token);
     this.router.navigate(['/info'])
+
+
+}
+else 
+{
+
+  this.errorMessage = "Login error"
+}
+  
     
   })
   .catch(error => {
@@ -51,4 +78,12 @@ export class LoginComponent implements OnInit{
     console.error('Error:', error);
   });
   }
+
+  else {
+    this.errorMessage = "Username ou Password incorrect"
+
+  }
+
+}
+
 }

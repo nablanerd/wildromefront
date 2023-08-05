@@ -2,6 +2,7 @@
     <section>
         <form [formGroup]="connectForm" (ngSubmit)="onSubmit()">
             <h1>Login</h1>
+            <p>{{errorMessage}}</p>
             <div class="inputbox">
                 <input id="username" formControlName="username" type="text" required>
                 <label for="">Username</label>
@@ -15,7 +16,7 @@
             </div>
             <button>Log in</button>
             <div class="register">
-                <p>Don't have a account <a href="#">Register</a></p>
+                <p>Don't have a account <a [routerLink]="['/register']">Register</a></p>
             </div>
         </form>
     </section>
