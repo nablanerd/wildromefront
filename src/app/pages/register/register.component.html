@@ -1,6 +1,7 @@
 <body>
     <div id="container">
        <header>Register new player</header>
+      <p>{{errorMessage}}</p>
        <form method="post" [formGroup]="registerForm" (ngSubmit)="onSubmit()">
           <fieldset>
              <br/>
