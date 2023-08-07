@@ -1,6 +1,11 @@
 <a [routerLink]="['/menu']">Menu</a>
 
-<app-ressources></app-ressources>
+<app-ressources
+[wood]="playerService.getWood()"
+[water]="playerService.getWater()"
+[food]="playerService.getFood()"
+[money]="playerService.getMoney()"
+></app-ressources>
 
 <h1>BATIMENT</h1>
 <h2>Construction</h2>
@@ -47,4 +52,5 @@
 -->
 
 <br>
+<p>{{errorMessage}}</p>
 <button *ngIf="canBuild" (click)="onBuild()">Construire</button>

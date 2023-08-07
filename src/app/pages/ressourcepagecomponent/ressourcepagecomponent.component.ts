@@ -10,17 +10,17 @@ import { RessourceService } from 'src/app/services/ressource.service';
 export class RessourcePageComponent implements OnInit{
   
   playerInfo: any;
-
+/* 
  wood = 0;
   water = 0;
   food = 0;
-  money = 0;
+  money = 0; */
 
-  constructor(private playerservice : PlayerService ){}
+  constructor(public playerService : PlayerService ){}
 
   ngOnInit() {
 
-    this.playerservice.getPlayerInfo((data : any)=>{
+/*     this.playerService.getPlayerInfo((data : any)=>{
 
       console.log(data, "data");
 
@@ -32,10 +32,12 @@ this.food = data.food
 this.money = data.money
 
     });
-
+ */
   
-  }
+    this.playerService.getRessources()
 
+  }
+/* 
   addWood()
   {
     this.wood++
@@ -55,18 +57,18 @@ this.money = data.money
   {
     this.money++
   }
-
+ */
 
   updateRessource()
   {
 
 
-    this.playerservice.updateRessource(
+    this.playerService.updateRessource(
 
-      this.wood ,
-this.water,
-this.food ,
-this.money ,
+this.playerService.getWood() ,
+this.playerService.getWater(),
+this.playerService.getFood() ,
+this.playerService.getMoney(),
 
       (data : any)=>{console.log(data)
     })

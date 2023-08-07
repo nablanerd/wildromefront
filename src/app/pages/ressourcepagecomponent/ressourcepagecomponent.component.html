@@ -18,7 +18,15 @@
             <app-menu></app-menu>
         </div>
         <div class="main">
-            <div class="ressource">
+
+            <app-ressources
+            [wood]="playerService.getWood()"
+            [water]="playerService.getWater()"
+            [food]="playerService.getFood()"
+            [money]="playerService.getMoney()"
+            ></app-ressources>
+
+           <!-- <div class="ressource">
                 <ul class="ressource_list">
                     <li>
                         <img src="assets/wood.png" alt="Image 1">
@@ -38,6 +46,9 @@
                     </li>
                 </ul>
             </div>
+
+            -->
+
             <div class="title">
                 <h1>𝓡𝓮𝓼𝓼𝓸𝓾𝓻𝓬𝓮𝓼</h1>
                 <h2>𝓐𝓳𝓸𝓾𝓽𝓮𝓻</h2>
@@ -47,23 +58,23 @@
                         <ul class="update_ressource_list">
                             <li>
                                 <img src="assets/wood.png" alt="Image 1">
-                                <span class="ressource_element1">Wood {{wood}}</span>
-                                <button class="addButtonRessource" (click) = "addWood()" >+</button>
+                                <span class="ressource_element1">Wood {{playerService.getWood()}}</span>
+                                <button class="addButtonRessource" (click) = "playerService.addWood()" >+</button>
                             </li>
                             <li>
                                 <img src="assets/water.jpg" alt="Image 2">
-                                <span class="ressource_element2">Water {{water}}</span>
-                                <button class="addButtonRessource" (click) = "addWater()">+</button>
+                                <span class="ressource_element2">Water {{playerService.getWater()}}</span>
+                                <button class="addButtonRessource" (click) = "playerService.addWater()">+</button>
                             </li>
                             <li>
                                 <img src="assets/food.png" alt="Image 3">
-                                <span class="ressource_element3">Food {{food}}</span>
-                                <button class="addButtonRessource" (click) = "addFood()">+</button>
+                                <span class="ressource_element3">Food {{playerService.getFood()}}</span>
+                                <button class="addButtonRessource" (click) = "playerService.addFood()">+</button>
                             </li>
                             <li>
                                 <img src="assets/coins.png" alt="Image 4">
-                                <span class="ressource_element4">Coins {{money}}</span>
-                                <button class="addButtonRessource" (click) = "addMoney()">+</button>
+                                <span class="ressource_element4">Coins {{playerService.getMoney()}}</span>
+                                <button class="addButtonRessource" (click) = "playerService.addMoney()">+</button>
                             </li>
                         </ul>
                     </div>
