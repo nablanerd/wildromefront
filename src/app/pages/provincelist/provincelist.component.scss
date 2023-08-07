@@ -414,6 +414,25 @@ div.content {
     background-color: #8F5A00;
   }
 
+  .list-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #D7CBA3;
+    color: #8F5A00;
+    border: none;
+    border-radius: 10px;
+    text-decoration: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.3s, background-color 0.3s;
+
+    &:hover {
+      transform: scale(1.05);
+      background-color: #8F5A00;
+      color: #D7CBA3;
+    }
+  }
+}
   a {
     display: block;
     margin: 10px;
@@ -462,14 +481,13 @@ div.content {
         }
 
         img {
-          width: 100px;
-          height: 100px;
+          width: 180px;
+          height: 180px;
           border-radius: 50%;
           margin-right: 10px;
         }
       }
     }
-  }
 }
 
 /* ========== Animation Keyframes ========== */
