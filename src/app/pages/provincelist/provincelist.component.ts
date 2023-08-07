@@ -56,7 +56,7 @@ export class ProvincelistComponent implements OnInit {
   goToBuilding(idProvince :number, nameProvince : string)
   {
 
-    localStorage.setItem("provinceID", idProvince.toString())
+    localStorage.setItem("provinceId", idProvince.toString())
     localStorage.setItem("provinceName", nameProvince)
 
     this.router.navigate(['/buildinglist'])

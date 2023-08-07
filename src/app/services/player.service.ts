@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 
 import {Router} from "@angular/router"
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -10,6 +11,7 @@ export class PlayerService {
   playerInfo: any;
 
   constructor( private router: Router) { }
+
 
   getPlayerInfo(cb : any ) {
     const token = localStorage.getItem('token');
@@ -101,8 +103,122 @@ export class PlayerService {
   }
 
 
+  buildingInProvince(buildingId : any, provinceId : any, cb : any)
+  {
+
+    fetch(`http://localhost:8080/updatebuildingwithprovince/${buildingId}/${provinceId}`, {
+      method: 'PUT',
+   
+    })
+    .then(response => response.json())
+    .then(body => {
+      
+      cb(body.data)
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+
+    });
+
+  }
+
+
+  getBuildingsAvaible(cb:any)
+  {
+
+    fetch("http://localhost:8080/buildingsavaible", {
+      method: 'GET',
+   
+    })
+    .then(response => response.json())
+    .then(body => {
+      
+      cb(body.data)
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+
+    });
+
+
+    
+  }
+
+  getBuildingsFromProvence(idProvence : any, cb : any)
+  {
+
+console.log(idProvence, " getBuildingsFromProvence idProvence");
+
+
+    fetch(`http://localhost:8080/getbuildingsfromprovence/${idProvence}`, {
+      method: 'GET',
+   
+    })
+    .then(response => response.json())
+    .then(body => {
+      
+      cb(body.data)
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+
+    });
+
+
+    
 
 
   }
+
+
+  getBuildingDetail(idBuilding:any, cb:any)
+  {
+
+    fetch(`http://localhost:8080/building/${idBuilding}`, {
+      method: 'GET',
+   
+    })
+    .then(response => response.json())
+    .then(body => {
+      
+      cb(body.data)
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+
+    });
+
+  }
+
+
+
+  updateBuildingTroop(idBuilding : any, troop :any, cb : any)
+  {
+
+    fetch(`http://localhost:8080/buildingtroop/${idBuilding}`, {
+      method: 'PUT',
+
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify({
+        troop: troop,
+    })
+    })
+    .then(response => response.json())
+    .then(data => {
+      
+      cb(data.data)
+    })
+    .catch(error => {
+      console.error('Error:', error);
+
+    });
+  }
+  }//
 
 

@@ -8,9 +8,8 @@
 
 <a [routerLink]="['/buildingbuild']">Construire Batiment</a>
 
-<ul>
-    <li><a [routerLink]="['/buildingdetails']">Batiment 1</a><button>Détails</button></li>
-    <li><a [routerLink]="['/buildingdetails']">Batiment 2</a></li>
-    <li><a [routerLink]="['/buildingdetails']">Batiment 3</a></li>
+<ul *ngFor="let building of buildings ;">
+
+    <li><a [routerLink]="['/buildingdetails', building.id]">{{building.name}}</a></li>
 
 </ul>
