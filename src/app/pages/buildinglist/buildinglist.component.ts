@@ -17,7 +17,7 @@ export class BuildinglistComponent implements OnInit {
 
   buildings : any 
 
-  constructor(private playerService: PlayerService, private router: Router) { }
+  constructor(public playerService: PlayerService, private router: Router) { }
 
 
   ngOnInit() {
@@ -47,6 +47,7 @@ console.log(this.buildings, "this.buildings");
 
 this.playerService.getBuildingsFromProvence(this.provinceId, (data : Building[])=>{
 
+  
   this.buildings = data
 
   console.log(data, "data ");
@@ -58,6 +59,7 @@ this.playerService.getBuildingsFromProvence(this.provinceId, (data : Building[])
   })
 
   
+  this.playerService.getRessources()
 
   }
 

@@ -1,6 +1,13 @@
 <a [routerLink]="['/menu']">Menu</a>
 
-<app-ressources></app-ressources>
+
+<app-ressources
+[wood]="playerService.getWood()"
+[water]="playerService.getWater()"
+[food]="playerService.getFood()"
+[money]="playerService.getMoney()"
+></app-ressources>
+
 <h1>BATAILLES</h1>
 <h2>Liste</h2>
 
