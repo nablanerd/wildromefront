@@ -6,4 +6,17 @@
 <h2>Détails</h2>
 
 <p>Name Province: {{provinceName}}</p>
+<button (click)="goToBuildingList()">goToBuildingList</button>
 
+<p *ngIf="building">Name : {{building.name}}</p>
+<p *ngIf="building">Force : {{building.strength}}</p>
+<p *ngIf="building">Type : {{building.type}}</p>
+<p *ngIf="building">Recrue : {{building.troop}}<button (click)="addTroop()">+</button></p>
+
+
+<p>Total prix  bois = prix bois x recrue</p>
+<p>Total prix  eau = prix eau x recrue</p>
+<p>Total prix  nourriture = prix bois x recrue</p>
+
+
+<button (click)="saveTroop()">Recrutement</button>

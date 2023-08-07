@@ -46,7 +46,7 @@ export class RegisterComponent {
   
       console.log(body);
 
-if(body.data.message === "Invalid params")
+if(body?.data?.message === "Invalid params")
 {
 this.errorMessage = "Invalid params"
 }

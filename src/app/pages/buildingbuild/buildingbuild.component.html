@@ -5,6 +5,8 @@
 <h1>BATIMENT</h1>
 <h2>Construction</h2>
 <h3>Name Province: {{provinceName}}</h3>
+<button (click)="goToBuildingList()">goToBuildingList</button>
+
 
 <h3>Choisir un type</h3>
 <select #buildingslist  (change)='onSelect(buildingslist.value)'>
@@ -19,7 +21,11 @@
 
 <p *ngIf="building">Name : {{building.name}}</p>
 <p *ngIf="building">Force : {{building.strength}}</p>
-<p *ngIf="building">Prix bois : {{building.woodprice}}</p>
+<p *ngIf="building">Prix bois : {{building.wood}}</p>
+<p *ngIf="building">Prix eau : {{building.water}}</p>
+<p *ngIf="building">Prix nourriture : {{building.food}}</p>
+<p *ngIf="building">Prix argent : {{building.money}}</p>
+
 
 <!--
 <ul>
@@ -41,4 +47,4 @@
 -->
 
 <br>
-<button (click)="onBuild()">Construire</button>
+<button *ngIf="canBuild" (click)="onBuild()">Construire</button>

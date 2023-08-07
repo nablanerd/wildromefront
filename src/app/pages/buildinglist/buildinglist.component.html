@@ -27,32 +27,19 @@
                     <h3>Province : {{ this.provinceName }} <img class="profile-photo" src="assets/profile-photo.jpg" alt="Profile Photo"></h3>
                   
                     <a [routerLink]="['/buildingbuild']">Construire Batiment</a>
+
                     
-                    <ul>
+                    <ul *ngFor="let building of buildings ;>
                       <li>
-                        <a [routerLink]="['/buildingdetails']">
+                        <a [routerLink]="['/buildingdetails' , building.id]">
                           <img class="profile-photo" src="assets/building1.jpg" alt="Building 1 Photo">
-                          Batiment 1
+                          {{building.name}}
                         </a>
                         <button class="details-button">Détails</button>
                       </li>
-                      <li>
-                        <a [routerLink]="['/buildingdetails']">
-                          <img class="profile-photo" src="assets/building2.jpg" alt="Building 2 Photo">
-                          Batiment 2
-                        </a>
-                        <button class="details-button">Détails</button>
-                      </li>
-                      <li>
-                        <a [routerLink]="['/buildingdetails']">
-                          <img class="profile-photo" src="assets/building3.jpg" alt="Building 3 Photo">
-                          Batiment 3
-                        </a>
-                        <button class="details-button">Détails</button>
-                      </li>
+                 
                     </ul>
                   </div>
             </div>
         </div>
 </body>
-

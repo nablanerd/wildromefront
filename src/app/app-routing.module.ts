@@ -43,7 +43,7 @@ const routes: Routes = [
   { path: 'provincebuild', component: ProvincebuildComponent },
 
   { path: 'buildinglist', component: BuildinglistComponent },
-  { path: 'buildingdetails', component: BuildingdetailsComponent },
+  { path: 'buildingdetails/:id', component: BuildingdetailsComponent },
   { path: 'buildingbuild', component: BuildingbuildComponent },
 
   { path: 'legionlist', component: LegionlistComponent },
