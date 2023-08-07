@@ -82,4 +82,34 @@ a.button {
     box-shadow: 0 0 5px rgba(150, 0, 18, 0.5);
     transform: translateY(0) scale(0.98);
   }
+  a.logout-button {
+    display: flex;
+    background-color: #960012;
+    color: #D7CBA3;
+    padding: 15px 25px;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid #D7CBA3;
+    margin: 5px 0;
+    width: 80px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 8px;
+    padding: 8px;
+    border-radius: 20px;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  
+    &:hover {
+      border-color: #B2000C;
+      box-shadow: 0 0 20px rgba(150, 0, 18, 0.5);
+      transform: translateY(-2px) scale(1.02);
+    }
+  
+    &:active {
+      box-shadow: 0 0 5px rgba(150, 0, 18, 0.5);
+      transform: translateY(0) scale(0.98);
+    }
+  }
 }
