@@ -1,3 +1,4 @@
+
 <section class='info'>
 </section>
  
@@ -19,7 +20,13 @@
             <app-menu></app-menu>
         </div>
         <div class="main">
-            <app-ressources></app-ressources>
+            <app-ressources
+[wood]="playerService.getWood()"
+[water]="playerService.getWater()"
+[food]="playerService.getFood()"
+[money]="playerService.getMoney()"
+></app-ressources>
+          
             <div class="title">
                 <h1>𝓑𝓪𝓽𝓪𝓲𝓵𝓵𝓮𝓼</h1>
             </div>
@@ -30,4 +37,3 @@
         </div>
     </div>
 </body>
-

@@ -14,12 +14,13 @@ import {Router} from "@angular/router"
 export class InfoComponent implements OnInit{
   playerInfo: any = null;
 
-  constructor(private playerservice : PlayerService, private router: Router) { }
+  constructor(public playerService : PlayerService, private router: Router) { }
 
   ngOnInit() {
 
     
-      this.playerservice.getPlayerInfo((foo : any)=>{
+    
+      this.playerService.getPlayerInfo((foo : any)=>{
 
         console.log(foo, "foo");
   
@@ -28,6 +29,7 @@ export class InfoComponent implements OnInit{
 
     
     
+      this.playerService.getRessources()
 
   }
 

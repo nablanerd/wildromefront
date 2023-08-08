@@ -9,7 +9,9 @@
  
 <!--  ============================================================================================ -->
 
+
 <link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"> 
+
 
 <body>
     <div class="container">
@@ -19,7 +21,12 @@
             <app-menu></app-menu>
         </div>
         <div class="main">
-            <app-ressources></app-ressources>
+            <app-ressources
+[wood]="playerService.getWood()"
+[water]="playerService.getWater()"
+[food]="playerService.getFood()"
+[money]="playerService.getMoney()"
+></app-ressources>
             <div class="title">
                 <h1>𝓒𝓵𝓪𝓼𝓼𝓮𝓶𝓮𝓷𝓽</h1>
                 <h2>𝓗é𝓻𝓸𝓼</h2></div>

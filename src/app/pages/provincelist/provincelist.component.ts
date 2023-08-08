@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import {Router} from "@angular/router"
+import { PlayerService } from 'src/app/services/player.service';
 
 
 @Component({
@@ -12,7 +13,7 @@ export class ProvincelistComponent implements OnInit {
 
    provinces: any;
 
-   constructor(private router: Router) { }
+   constructor(public playerService : PlayerService,private router: Router) { }
 
 
   ngOnInit() {
@@ -48,6 +49,8 @@ export class ProvincelistComponent implements OnInit {
       // Gérer le cas où le token n'est pas présent dans le localStorage
       console.error('Token not found in localStorage.');
     }
+
+    this.playerService.getRessources()
 
 
   }

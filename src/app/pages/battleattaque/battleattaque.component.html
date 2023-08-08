@@ -19,7 +19,14 @@
             <app-menu></app-menu>
         </div>
         <div class="main">
-          <app-ressources></app-ressources>
+         
+          <app-ressources
+          [wood]="playerService.getWood()"
+          [water]="playerService.getWater()"
+          [food]="playerService.getFood()"
+          [money]="playerService.getMoney()"
+          ></app-ressources>
+          
             <div class="title">
               <h1>𝓑𝓪𝓽𝓪𝓲𝓵𝓵𝓮𝓼 ⚔</h1>
               <h2>𝓐𝓽𝓽𝓪𝓺𝓾𝓮</h2></div>
@@ -27,12 +34,12 @@
               
 
               <h3>Choisir son enemie</h3>
-
-              <ul class="enemies-list">
+              <ul class="enemies-list" *ngFor="let enemy of enemies">
                 <li>
-                  <img src="/assets/Enemie1.jpg" alt="Enemie 1 Icon">
-                  Enemie 1
+                  <img [style]="setBorder(enemy)" (click)="selectEnemy(enemy.id)" src="/assets/Enemie1.jpg" alt="Enemie 1 Icon">
+                  {{enemy.login}}
                 </li>
+                <!--
                 <li>
                   <img src="/assets/Enemie2.jpg" alt="Enemie 2 Icon">
                   Enemie 2
@@ -41,8 +48,10 @@
                   <img src="/assets/Enemie3.jpg" alt="Enemie 3 Icon">
                   Enemie 3
                 </li>
+                -->
               </ul>
               
+              <!--
               <h3>Recruter une légions</h3>
               
               <ul class="legion-list">
@@ -59,8 +68,12 @@
                   Légion Type C
                 </li>
                 </ul>
-              
+             
               <a [routerLink]="['/battlewin']">Attaquer</a>
+
+               -->
+
+               <button *ngIf="this.current_enemy" (click)="attack()">Attaquer</button>
 
 
             </div>

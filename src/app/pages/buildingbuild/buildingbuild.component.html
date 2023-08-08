@@ -19,7 +19,14 @@
             <app-menu></app-menu>
         </div>
         <div class="main">
-            <app-ressources></app-ressources>
+            
+          <app-ressources
+[wood]="playerService.getWood()"
+[water]="playerService.getWater()"
+[food]="playerService.getFood()"
+[money]="playerService.getMoney()"
+></app-ressources>
+          
             <div class="title">
                 <h1>𝓑â𝓽𝓲𝓶𝓮𝓷𝓽</h1>
                 <h2>𝓒𝓸𝓷𝓼𝓽𝓻𝓾𝓬𝓽𝓲𝓸𝓷</h2></div>
@@ -47,9 +54,9 @@
             <p *ngIf="building">Prix Coins : {{building.money}}</p>
 
             <br>
+              <p>{{errorMessage}}</p>
             <button *ngIf="canBuild" (click)="onBuild()">Construire</button>
             </div>
             </div>
         </div>
 </body>
-

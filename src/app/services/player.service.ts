@@ -10,8 +10,72 @@ export class PlayerService {
 
   playerInfo: any;
 
+  wood =0;
+  water = 0;
+  food = 0;
+  money = 0;
+
+  addWood()
+  {
+
+    this.wood++
+
+  }
+
+  getWood()
+  {
+    return this.wood
+  }
+
+
+  addWater()
+  {
+    this.water++
+  }
+
+  getWater()
+  {
+    return this.water
+  }
+
+  addFood()
+  {
+    this.food++
+  }
+
+  getFood()
+  {
+    return this.food
+  }
+
+  addMoney()
+  {
+    this.money++
+  }
+
+  getMoney()
+  {
+    return this.money
+  }
+
   constructor( private router: Router) { }
 
+
+  getRessources()
+  {
+
+    this.getPlayerInfo((data : any)=>{
+
+      console.log(data, "data");
+
+this.wood = data.wood
+this.water = data.water
+this.food = data.food
+this.money = data.money
+
+    });
+
+  }
 
   getPlayerInfo(cb : any ) {
     const token = localStorage.getItem('token');
@@ -206,19 +270,103 @@ console.log(idProvence, " getBuildingsFromProvence idProvence");
         'Content-Type' : 'application/json'
       },
       body: JSON.stringify({
-        troop: troop,
+        troop: troop
     })
     })
     .then(response => response.json())
-    .then(data => {
+    .then(body => {
       
-      cb(data.data)
+      console.log(body, "body");
+      
+      cb(body.data)
     })
     .catch(error => {
       console.error('Error:', error);
 
     });
   }
+
+
+
+  getfakeotherConnectedPlayers(cb : any)
+  {
+
+    fetch('http://localhost:8080/auth/fakeotherconnectedplayers', {
+      method: 'GET',
+   
+    })
+    .then(response => response.json())
+    .then(body => {
+      
+      cb(body.data)
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+
+    });
+
+  }
+
+
+  getOtherConnectedPlayers(cb : any)
+  {
+    const token = localStorage.getItem('token');
+
+    console.log("getOtherConnectedPlayers", "token", token);
+    
+
+    if (token) {
+
+    fetch('http://localhost:8080/auth/otherConnectedPlayers', {
+      method: 'GET',
+      
+        headers: {
+          'x-token': token
+        }
+      
+   
+    })
+    .then(response => response.json())
+    .then(body => {
+      
+      cb(body.data)
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+
+    });
+
+  }
+
+  }
+
+
+  attack(idPlayer:any, idEnemy : any, cb:any)
+  {
+
+
+    fetch('http://localhost:8080/fakebattle', {
+      method: 'GET',
+   
+    })
+    .then(response => response.json())
+    .then(body => {
+      
+      cb(body.data)
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+
+    });
+
+
+
+  }
+
+
   }//
 
 

@@ -19,7 +19,13 @@
             <app-menu></app-menu>
         </div>
         <div class="main">
-            <app-ressources></app-ressources>
+           <app-ressources
+[wood]="playerService.getWood()"
+[water]="playerService.getWater()"
+[food]="playerService.getFood()"
+[money]="playerService.getMoney()"
+></app-ressources>
+          
             <div class="title">
                 <h1>𝓑â𝓽𝓲𝓶𝓮𝓷𝓽</h1>
                 <h2>𝓓é𝓽𝓪𝓲𝓵𝓼</h2></div>
@@ -34,13 +40,14 @@
                       Recrue : {{building.troop}}<button class="add-button" (click)="addTroop()">+</button>
                     </p>
                   
-                    <p>Total prix Wood = prix Wood x recrue</p>
-                    <p>Total prix Water = prix Water x recrue</p>
-                    <p>Total prix Food = prix Food x recrue</p>
+                  <p *ngIf="building">Total prix  bois = {{multy(building.wood , building.troop)}}</p>
+                  <p *ngIf="building">Total prix  eau = {{multy(building.water, building.troop)}}</p>
+<p *ngIf="building">Total prix  nourriture = {{multy(building.food, building.troop)}}</p>
+<p *ngIf="building">Total prix  money = {{multy(building.money, building.troop)}}</p>
                   
+                  <p>{{errorMessage}}</p>
                     <button class="save-button" (click)="saveTroop()">Recrutement</button>
                   </div>
             </div>
         </div>
 </body>
-

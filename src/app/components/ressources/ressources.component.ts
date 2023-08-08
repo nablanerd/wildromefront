@@ -1,7 +1,4 @@
-import { Component , OnInit} from '@angular/core';
-import { RessourceService } from 'src/app/services/ressource.service';
-
-import { PlayerService } from 'src/app/services/player.service';
+import { Component , Input, OnInit} from '@angular/core';
 
 @Component({
   selector: 'app-ressources',
@@ -10,16 +7,22 @@ import { PlayerService } from 'src/app/services/player.service';
 })
 export class RessourcesComponent implements OnInit {
 
+  @Input()
   wood = 0;
+
+  @Input()
   water = 0;
+
+  @Input()
   food = 0;
+
+  @Input()
   money = 0;
 
-
-  constructor(private playerservice : PlayerService ){}
+  //constructor(private playerservice : PlayerService ){}
 
   ngOnInit() {
-
+/* 
     this.playerservice.getPlayerInfo((data : any)=>{
 
       console.log(data, "data");
@@ -32,7 +35,9 @@ this.money = data.money
     });
 
   
+ */
   }
   
   
+ 
 }
