@@ -1,56 +1,62 @@
-<a [routerLink]="['/menu']">Menu</a>
+<section class='info'>
+</section>
+ 
+ <div class='clouds'>
+   <div class='clouds-1'></div>
+   <div class='clouds-2'></div>
+   <div class='clouds-3'></div>
+ </div>
+ 
+<!--  ============================================================================================ -->
 
-<app-ressources
+<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"> 
+
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="assets/logo.jpg" alt="Logo" class="logo">
+            <h1 class="mainTitle">WILDROME</h1>
+            <app-menu></app-menu>
+        </div>
+        <div class="main">
+            
+          <app-ressources
 [wood]="playerService.getWood()"
 [water]="playerService.getWater()"
 [food]="playerService.getFood()"
 [money]="playerService.getMoney()"
 ></app-ressources>
-
-<h1>BATIMENT</h1>
-<h2>Construction</h2>
-<h3>Name Province: {{provinceName}}</h3>
-<button (click)="goToBuildingList()">goToBuildingList</button>
-
-
-<h3>Choisir un type</h3>
-<select #buildingslist  (change)='onSelect(buildingslist.value)'>
-    
-    <option  value="null">Select building</option>
-
-    <option *ngFor="let option of buildings" [value]="option.type">
-        {{ option.type }}
-     </option>
-
-</select>
-
-<p *ngIf="building">Name : {{building.name}}</p>
-<p *ngIf="building">Force : {{building.strength}}</p>
-<p *ngIf="building">Prix bois : {{building.wood}}</p>
-<p *ngIf="building">Prix eau : {{building.water}}</p>
-<p *ngIf="building">Prix nourriture : {{building.food}}</p>
-<p *ngIf="building">Prix argent : {{building.money}}</p>
+          
+            <div class="title">
+                <h1>𝓑â𝓽𝓲𝓶𝓮𝓷𝓽</h1>
+                <h2>𝓒𝓸𝓷𝓼𝓽𝓻𝓾𝓬𝓽𝓲𝓸𝓷</h2></div>
+            <div class="content">
+            <h3>Name Province: {{provinceName}}</h3>
+                <button (click)="goToBuildingList()">goToBuildingList</button>
 
 
-<!--
-<ul>
-    <li>Type 1</li>
-    <li>Type 2</li>
-    <li>Type 3</li>
-</ul>
+            <h3>Choisir un type</h3>
+            <select #buildingslist  (change)='onSelect(buildingslist.value)'>
+                
+                <option  value="null">Select building</option>
 
-<h3>Ressources nécessaire</h3>
+                <option *ngFor="let option of buildings" [value]="option.type">
+                    {{ option.type }}
+                </option>
 
-<ul>
-    <li>Bois 0</li>
-    <li>Eau 0</li>
-    <li>Nourriture 0</li>
-    <li>Argent 0</li>
+            </select>
 
-</ul>
+            <p *ngIf="building">Name : {{building.name}}</p>
+            <p *ngIf="building">Force : {{building.strength}}</p>
+            <p *ngIf="building">Prix Wood : {{building.wood}}</p>
+            <p *ngIf="building">Prix Water : {{building.water}}</p>
+            <p *ngIf="building">Prix Food : {{building.food}}</p>
+            <p *ngIf="building">Prix Coins : {{building.money}}</p>
 
--->
-
-<br>
-<p>{{errorMessage}}</p>
-<button *ngIf="canBuild" (click)="onBuild()">Construire</button>
+            <br>
+              <p>{{errorMessage}}</p>
+            <button *ngIf="canBuild" (click)="onBuild()">Construire</button>
+            </div>
+            </div>
+        </div>
+</body>

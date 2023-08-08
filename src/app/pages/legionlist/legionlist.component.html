@@ -1,14 +1,53 @@
-<a [routerLink]="['/menu']">Menu</a>
+<section class='info'>
+</section>
+ 
+ <div class='clouds'>
+   <div class='clouds-1'></div>
+   <div class='clouds-2'></div>
+   <div class='clouds-3'></div>
+ </div>
+ 
+<!--  ============================================================================================ -->
 
-<app-ressources></app-ressources>
-<h1>LEGIONS</h1>
-<h2>Liste</h2>
+<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"> 
 
-<ul>
-    <li>Légion Type A <button>+</button><button>-</button></li>
-    <li>Légion Type B <button>+</button><button>-</button></li>
-    <li>Légion Type B <button>+</button><button>-</button></li>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="assets/logo.jpg" alt="Logo" class="logo">
+            <h1 class="mainTitle">WILDROME</h1>
+            <app-menu></app-menu>
+        </div>
+        <div class="main">
+            <app-ressources></app-ressources>
+            <div class="title">
+                <h1>𝓛é𝓰𝓲𝓸𝓷𝓼</h1>
+                <h2>𝓛𝓲𝓼𝓽𝓮</h2></div>
+                <div class="content">
+                    <ul class="legion-list">
+                      <li>
+                        <img src="/assets/legion1.jpg" alt="Legion 1 Icon">
+                        <button class="add-button">+</button>
+                        <button class="subtract-button">-</button>
+                        Légion Type A
+                      </li>
+                      <li>
+                        <img src="/assets/legion2.jpg" alt="Legion 2 Icon">
+                        <button class="add-button">+</button>
+                        <button class="subtract-button">-</button>
+                        Légion Type B
+                      </li>
+                      <li>
+                        <img src="/assets/legion3.jpg" alt="Legion 3 Icon">
+                        <button class="add-button">+</button>
+                        <button class="subtract-button">-</button>
+                        Légion Type C
+                      </li>
+                    </ul>
+                    
+                    <button class="save-button">Save</button>
+                  </div>
+            </div>
+        </div>
+</body>
 
-</ul>
-
-<button>save</button>
