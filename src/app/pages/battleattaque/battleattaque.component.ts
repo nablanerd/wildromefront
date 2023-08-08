@@ -112,12 +112,12 @@ return 'border : 1px solid black'
 
       alert( this.current_enemy.id)
 
-      const current_player_id = 1
+      //const current_player_id = 1
 
-      this.playerService.attack(current_player_id, this.current_enemy.id, (data:any)=>{
+      this.playerService.attack(this.current_enemy.id, (data:any)=>{
 
 
-        if(data?.winnerId === current_player_id)
+        if(data?.iswinner)
         {
 
           this.router.navigate(['/battlewin'])

@@ -343,12 +343,19 @@ console.log(idProvence, " getBuildingsFromProvence idProvence");
   }
 
 
-  attack(idPlayer:any, idEnemy : any, cb:any)
+  attack(idEnemy : any, cb:any)
   {
 
 
-    fetch('http://localhost:8080/fakebattle', {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+
+    fetch(`http://localhost:8080/attack/${idEnemy}`, {
       method: 'GET',
+      headers: {
+        'x-token': token
+      }
    
     })
     .then(response => response.json())
@@ -363,7 +370,7 @@ console.log(idProvence, " getBuildingsFromProvence idProvence");
     });
 
 
-
+  }
   }
 
 
