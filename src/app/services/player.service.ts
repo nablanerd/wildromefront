@@ -309,6 +309,39 @@ console.log(idProvence, " getBuildingsFromProvence idProvence");
   }
 
 
+  getOtherConnectedPlayers(cb : any)
+  {
+    const token = localStorage.getItem('token');
+
+    console.log("getOtherConnectedPlayers", "token", token);
+    
+
+    if (token) {
+
+    fetch('http://localhost:8080/auth/otherConnectedPlayers', {
+      method: 'GET',
+      
+        headers: {
+          'x-token': token
+        }
+      
+   
+    })
+    .then(response => response.json())
+    .then(body => {
+      
+      cb(body.data)
+
+    })
+    .catch(error => {
+      console.error('Error:', error);
+
+    });
+
+  }
+
+  }
+
 
   attack(idPlayer:any, idEnemy : any, cb:any)
   {
