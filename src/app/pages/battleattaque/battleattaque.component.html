@@ -34,7 +34,6 @@
               
 
               <h3>Choisir son enemie</h3>
-
               <ul class="enemies-list" *ngFor="let enemy of enemies">
                 <li>
                   <img [style]="setBorder(enemy)" (click)="selectEnemy(enemy.id)" src="/assets/Enemie1.jpg" alt="Enemie 1 Icon">

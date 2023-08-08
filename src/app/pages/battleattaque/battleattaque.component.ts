@@ -23,10 +23,14 @@ export class BattleattaqueComponent implements OnInit{
   ngOnInit() {
     this.playerService.getRessources()
 
-    this.playerService.getfakeotherConnectedPlayers((data:any)=>
+    this.playerService.getOtherConnectedPlayers((data:any)=>
     {
 
-    this.enemies = data
+      console.log("BattleattaqueComponent ngOnInit ", data );
+      
+      if(data?.length > 0)
+      {
+ this.enemies = data
 
     //this.enemies = data.map((e:any) => e.flag = false)
 
@@ -35,6 +39,15 @@ export class BattleattaqueComponent implements OnInit{
       e.flag = false
       
       })
+
+        
+      }
+
+      else 
+      {
+        this.enemies = []
+      }
+   
 
       
     
