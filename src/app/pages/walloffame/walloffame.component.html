@@ -1,14 +1,37 @@
-<a [routerLink]="['/menu']">Menu</a>
+<section class='info'>
+</section>
+ 
+ <div class='clouds'>
+   <div class='clouds-1'></div>
+   <div class='clouds-2'></div>
+   <div class='clouds-3'></div>
+ </div>
+ 
+<!--  ============================================================================================ -->
 
-<app-ressources></app-ressources>
+<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"> 
 
-<h1>Classement</h1>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="assets/logo.jpg" alt="Logo" class="logo">
+            <h1 class="mainTitle">WILDROME</h1>
+            <app-menu></app-menu>
+        </div>
+        <div class="main">
+            <app-ressources></app-ressources>
+            <div class="title">
+                <h1>𝓒𝓵𝓪𝓼𝓼𝓮𝓶𝓮𝓷𝓽</h1>
+                <h2>𝓗é𝓻𝓸𝓼</h2></div>
+                <div class="content">
+                    <ul class="leaderboard">
+                      <li class="player player1">1. joueur 1</li>
+                      <li class="player player2">2. joueur 2</li>
+                      <li class="player player3">3. joueur 3</li>
+                      <li class="player player4">4. joueur 4</li>
+                    </ul>
+                  </div>
+            </div>
+        </div>
+</body>
 
-
-<ul>
-    <li>Joueur 1</li>
-    <li>Joueur 2</li>
-    <li>Joueur 3</li>
-    <li>Joueur 4</li>
-
-</ul>

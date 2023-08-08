@@ -1,22 +1,62 @@
-<a [routerLink]="['/menu']">Menu</a>
+<section class='info'>
+</section>
+ 
+ <div class='clouds'>
+   <div class='clouds-1'></div>
+   <div class='clouds-2'></div>
+   <div class='clouds-3'></div>
+ </div>
+ 
+<!--  ============================================================================================ -->
 
-<app-ressources></app-ressources>
-<h1>BATAILLES</h1>
-<h2>Défendre</h2>
+<link href="https://fonts.googleapis.com/css2?family=Lora&display=swap" rel="stylesheet"> 
 
-<h3>Cette enemie vous attaque</h3>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <img src="assets/logo.jpg" alt="Logo" class="logo">
+            <h1 class="mainTitle">WILDROME</h1>
+            <app-menu></app-menu>
+        </div>
+        <div class="main">
+          <app-ressources></app-ressources>
+            <div class="title">
+              <h1>𝓑𝓪𝓽𝓪𝓲𝓵𝓵𝓮𝓼 ⚔</h1>
+              <h2>𝓓é𝓯𝓮𝓷𝓭𝓻𝓮</h2></div>
+            <div class="content">
+              
 
-<ul>
-    <li>Enemie 1</li>
-</ul>
+            <h3>Cette enemie vous attaque</h3>
 
-<h3>Recruter une légions</h3>
+              <ul class="enemies-list">
+                <li>
+                  <img src="/assets/Enemie1.jpg" alt="Enemie 1 Icon">
+                  Enemie 1
+                </li>
+              </ul>
+              
+              <h3>Recruter une légions</h3>
+              
+              <ul class="legion-list">
+                <li>
+                  <img src="/assets/legion1.jpg" alt="Legion 1 Icon"><button>+</button><button>-</button>
+                  Légion Type A
+                </li>
+                <li>
+                  <img src="/assets/legion2.jpg" alt="Legion 2 Icon"><button>+</button><button>-</button>
+                  Légion Type B
+                </li>
+                <li>
+                  <img src="/assets/legion3.jpg" alt="Legion 3 Icon"><button>+</button><button>-</button>
+                  Légion Type C
+                </li>
+                </ul>
+              
+                <a [routerLink]="['/battlelose']">Défendre</a>
 
-<ul>
-    <li>Légion Type A <button>+</button><button>-</button></li>
-    <li>Légion Type B <button>+</button><button>-</button></li>
-    <li>Légion Type B <button>+</button><button>-</button></li>
 
-</ul>
+            </div>
+            </div>
+        </div>
+</body>
 
-<a [routerLink]="['/battlelose']">Défendre</a>
