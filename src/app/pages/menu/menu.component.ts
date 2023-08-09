@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 
 import {Router} from "@angular/router"
 
+import { PlayerService } from 'src/app/services/player.service';
+
+
 @Component({
   selector: 'app-menu',
   templateUrl: './menu.component.html',
@@ -9,10 +12,14 @@ import {Router} from "@angular/router"
 })
 export class MenuComponent implements OnInit {
 
-  constructor( private router: Router) { }
+  constructor( public playerService : PlayerService, private router: Router) { }
 
 
   ngOnInit() {
+
+if( this.playerService.getIsGameOver())
+    this.router.navigate(['/gameover'])
+
 
     //this.router.navigate(['/walloffame'])
 

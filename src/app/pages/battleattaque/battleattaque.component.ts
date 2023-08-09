@@ -110,7 +110,7 @@ return 'border : 1px solid black'
     if(this.current_enemy)
     {
 
-      alert( this.current_enemy.id)
+      //alert( this.current_enemy.id)
 
       //const current_player_id = 1
 
