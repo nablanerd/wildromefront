@@ -38,10 +38,11 @@ import { TeststyleComponent } from './pages/teststyle/teststyle.component';
 import { ReactiveFormsModule } from '@angular/forms'; 
 import { RessourcePageComponent } from './pages/ressourcepagecomponent/ressourcepagecomponent.component';
 import { LogoutComponent } from './pages/logout/logout.component';
+import { GameoverComponent } from './pages/gameover/gameover.component';
 
 
 @NgModule({
-  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, LoginComponent, InputtextComponent, InputpasswordComponent, RegisterComponent, InfoComponent, MenuComponent, ProvincelistComponent, ProvincedetailsComponent, ProvincebuildComponent, RessourcesComponent, BuildinglistComponent, BuildingbuildComponent, BuildingdetailsComponent, LegionlistComponent, BattlelistComponent, BattleattaqueComponent, BattledefendreComponent, BattlewinComponent, BattleloseComponent, RdlistComponent, RddetailsComponent, WalloffameComponent, TeststyleComponent, RessourcePageComponent, LogoutComponent],
+  declarations: [AppComponent, DemoPageComponent, DemoComponent, DemoPipe, DemoDirective, LoginComponent, InputtextComponent, InputpasswordComponent, RegisterComponent, InfoComponent, MenuComponent, ProvincelistComponent, ProvincedetailsComponent, ProvincebuildComponent, RessourcesComponent, BuildinglistComponent, BuildingbuildComponent, BuildingdetailsComponent, LegionlistComponent, BattlelistComponent, BattleattaqueComponent, BattledefendreComponent, BattlewinComponent, BattleloseComponent, RdlistComponent, RddetailsComponent, WalloffameComponent, TeststyleComponent, RessourcePageComponent, LogoutComponent, GameoverComponent],
   imports: [BrowserModule, AppRoutingModule, BrowserAnimationsModule,ReactiveFormsModule],
   providers: [],
   bootstrap: [AppComponent],

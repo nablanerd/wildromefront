@@ -12,8 +12,25 @@ export class WalloffameComponent implements OnInit {
 
 
 
+  players  : any
+
+  errorMessage = "Aucun Joueurs connectés"
+
   ngOnInit() {
     this.playerService.getRessources()
+
+    this.playerService.getRanking((data:any)=>{
+
+
+
+      this.players = data
+
+      this.errorMessage =""
+
+
+    })
+
+
 
   }
 

@@ -26,6 +26,7 @@ import { TeststyleComponent } from './pages/teststyle/teststyle.component';
 
 import { RessourcePageComponent } from './pages/ressourcepagecomponent/ressourcepagecomponent.component';
 import { LogoutComponent } from './pages/logout/logout.component';
+import { GameoverComponent } from './pages/gameover/gameover.component';
 
 
 
@@ -68,6 +69,8 @@ const routes: Routes = [
 
   { path: 'logout', component: LogoutComponent },
 
+
+  { path: 'gameover', component: GameoverComponent },
 
 
 

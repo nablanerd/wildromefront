@@ -15,6 +15,9 @@ export class PlayerService {
   food = 0;
   money = 0;
 
+  isGameOver = false;
+
+
   addWood()
   {
 
@@ -371,6 +374,72 @@ console.log(idProvence, " getBuildingsFromProvence idProvence");
 
 
   }
+  }
+
+
+  getPoints(cb : any ) {
+    const token = localStorage.getItem('token');
+
+    if (token) {
+      fetch('http://localhost:8080/points', {
+        method: 'GET',
+        headers: {
+          'x-token': token
+        }
+      })
+      .then(response => response.json())
+      .then(data => {
+        
+        cb(data.data)
+      })
+      .catch(error => {
+        console.error('Error:', error);
+
+      });
+    } else {
+      // Gérer le cas où le token n'est pas présent dans le localStorage
+     // console.error('Token not found in localStorage.');
+
+     this.router.navigate(['/login'])
+
+    }
+  }
+
+
+
+  getIsGameOver()
+  {
+
+    return this.isGameOver
+  }
+
+  setIsGameOver(isGameOver : boolean)
+  {
+    this.isGameOver =isGameOver
+
+
+  }
+
+
+
+
+  getRanking(cb : any ) {
+
+      fetch('http://localhost:8080/ranking', {
+        method: 'GET',
+      
+        
+      })
+      .then(response => response.json())
+      .then(data => {
+        
+        cb(data.data)
+      })
+      .catch(error => {
+        console.error('Error:', error);
+
+      });
+      
   }
 
 
